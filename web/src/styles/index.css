@@ -10,7 +10,7 @@ body {
 
 html {
   ::-webkit-scrollbar {
-    @apply w-2 h-2 bg-gray-200 hover:bg-gray-300;
+    @apply w-8 h-4 bg-gray-200 hover:bg-gray-300;
   }
   /* Track */
   ::-webkit-scrollbar-track {
@@ -18,7 +18,7 @@ html {
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply h-1 rounded-xl bg-gray-400 transition-all hover:bg-gray-500;
+    @apply h-4 rounded-xl bg-gray-400 transition-all hover:bg-gray-500;
   }
 }
 
