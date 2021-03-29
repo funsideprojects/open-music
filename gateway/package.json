@@ -1,14 +1,17 @@
 {
-  "name": "gateway",
+  "name": "@fsp/gateway",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "tsc -b"
   },
   "dependencies": {
     "@apollo/gateway": "0.25.0",
     "apollo-server": "2.22.1",
     "graphql": "15.5.0"
+  },
+  "devDependencies": {
+    "typescript": "4.2.3"
   }
 }

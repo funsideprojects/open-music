@@ -1,17 +1,15 @@
 import { ApolloServer } from 'apollo-server'
-import { ApolloGateway } from "@apollo/gateway"
+import { ApolloGateway } from '@apollo/gateway'
 
 const gateway = new ApolloGateway({
-  serviceList: [
-    { name: 'users', url: 'http://localhost:4001/query' }
-  ],
-});
+  serviceList: [{ name: 'identity', url: 'http://localhost:4001/query' }],
+})
 
 const server = new ApolloServer({
   gateway,
   subscriptions: false,
-});
+})
 
 server.listen().then(({ url }) => {
-  console.log(`Server ready at ${url}`);
-});
+  console.log(`Server ready at ${url}`)
+})
