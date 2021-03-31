@@ -29,8 +29,8 @@ func main() {
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 
-	e.POST("/query", func(c echo.Context) error {
-		srv.ServeHTTP(c.Response(), c.Request())
+	e.POST("/query", func(context echo.Context) error {
+		srv.ServeHTTP(context.Response(), context.Request())
 		return nil
 	})
 
