@@ -5,4 +5,5 @@ node_modules
 .cassandraWorkbench
 .cassandraWorkbench.jsonc
 
-/web/source_idea/
+# IntelliJ
+.idea
