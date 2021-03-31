@@ -1,0 +1,31 @@
+version: "3"
+services:
+  cassandra-seed:
+    image: cassandra:4.0
+    container_name: cassandra_seed
+    ports:
+      - "9042:9042"
+      - "9160:9160"
+    environment:
+      CASSANDRA_CLUSTER_NAME: omcluster
+    networks:
+      om:
+        ipv4_address: 10.0.10.11
+  # cassandra-1:
+  #   image: cassandra:4.0
+  #   container_name: cassandra-1
+  #   environment:
+  #     CASSANDRA_SEEDS: 10.0.10.11
+  #   networks:
+  #     om:
+  #       ipv4_address: 10.0.10.12
+
+networks:
+  om:
+    name: oms-network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.10.0/24
+          gateway: 10.0.10.1
