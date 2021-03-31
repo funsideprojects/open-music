@@ -1,16 +1,17 @@
-version: "3"
+version: "3.8"
 services:
-  cassandra-seed:
-    image: cassandra:4.0
-    container_name: cassandra_seed
-    ports:
-      - "9042:9042"
-      - "9160:9160"
-    environment:
-      CASSANDRA_CLUSTER_NAME: omcluster
-    networks:
-      om:
-        ipv4_address: 10.0.10.11
+  # cassandra-seed:
+  #   image: cassandra:4.0
+  #   container_name: cassandra_seed
+  #   ports:
+  #     - "9042:9042"
+  #     - "9160:9160"
+  #   environment:
+  #     CASSANDRA_CLUSTER_NAME: omcluster
+  #   networks:
+  #     om:
+  #       ipv4_address: 10.0.10.11
+  #
   # cassandra-1:
   #   image: cassandra:4.0
   #   container_name: cassandra-1
@@ -19,6 +20,17 @@ services:
   #   networks:
   #     om:
   #       ipv4_address: 10.0.10.12
+
+  mongo-db:
+    image: mongo:4
+    container_name: mongo-db
+    restart: always
+    ports:
+      - ${MONGO_PORT}:27017
+    command: --wiredTigerCacheSizeGB 1.5
+    networks:
+      om:
+        ipv4_address: 10.0.10.20
 
 networks:
   om:

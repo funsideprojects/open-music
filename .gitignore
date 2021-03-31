@@ -1,6 +1,9 @@
 bin
 node_modules
 
-# Cassandra configs from ext
+# Environment
+.env
+
+# Cassandra configs from vscode ext
 .cassandraWorkbench
 .cassandraWorkbench.jsonc
