@@ -1,16 +1,16 @@
-
-MESSAGING_PORT=5001
-
 # Development
 
-docker-up:
+docker-devup:
 	docker-compose -f docker-compose.yml -f docker-compose.dev.yml --env-file ./.env.development up -d
 
-docker-down:
+docker-devdown:
 	docker-compose -f docker-compose.yml -f docker-compose.dev.yml --env-file ./.env.development down
 
-dev:
-	gin -appPort 5000 -i -x bin run websocket/server.go
+# Identity
+build-identity:
+	go build -o identity/.air/main identity/server.go
+dev-identity:
+	air -c identity/.air.toml
 
 devm:
 	gin -p 5001 -a 5011 -b bin/dev-messaging -t messaging -i --logPrefix messaging run messaging/server.go
