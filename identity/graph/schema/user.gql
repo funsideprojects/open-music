@@ -1,8 +1,15 @@
 type User @key(fields: "id") {
-  id: ID!
-  name: String!
+  id:                 ID!
+  email:              String
+  username:           String
+  fullname:           String
+  profile_image:      String
+  profile_image_url:  String
+
+  created_at:         String
+  upadted_at:         String
 }
 
 type Query {
-  user: User
+  user(id: ID!):      User
 }

@@ -29,6 +29,7 @@ docker-compose -f docker-compose.yml -f docker-compose.production.yml --env-file
 - [air](https://github.com/cosmtrek/air): Live reload
 - [websoket](github.com/gorilla/websocket)
 - [web framework](github.com/labstack/echo)
+- [gqlgen](https://gqlgen.com)
 
 ## Useful links
 

@@ -55,9 +55,6 @@ func main() {
 		DisablePrintStack: false,
 	}))
 
-	// Auth
-	// e.Use(auth.Middleware())
-
 	// ? GraphQL
 	graphqlServer := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 

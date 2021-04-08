@@ -23,7 +23,7 @@ func LoadEnvConfigs() {
 	err := viper.ReadInConfig()
 
 	if err != nil {
-		log.Fatalf("Error while reading config file %s", err)
+		log.Fatalf("Error while reading environment config file %s", err)
 	}
 
 	viper.WatchConfig()

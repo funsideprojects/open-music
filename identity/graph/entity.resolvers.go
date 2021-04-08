@@ -11,8 +11,7 @@ import (
 
 func (r *entityResolver) FindUserByID(ctx context.Context, id string) (*model.User, error) {
 	return &model.User{
-		ID:   id,
-		Name: "Tom",
+		ID: id,
 	}, nil
 }
 
